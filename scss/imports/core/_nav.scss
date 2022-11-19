@@ -1,0 +1,40 @@
+// css navigator (Menu)
+.nav {
+    transition: $t;
+
+    &.active {
+        display: flex;
+        flex-direction: column;
+        @include visible(1);
+
+    }
+
+    @include visible(0);
+
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background: #161616;
+    z-index: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    ul {
+        margin-top: 150px;
+
+        li {
+            margin-bottom: 20px
+        }
+    }
+
+
+
+    a {
+        @include text(20px, 'OsRe', 20px, $white-cl, uppercase);
+        margin-bottom: 50px;
+    }
+
+}

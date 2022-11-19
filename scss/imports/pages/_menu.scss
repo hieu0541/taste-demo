@@ -1,0 +1,115 @@
+.scourmenus {
+    padding: 120px 30px;
+    background: $bg-cl;
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        position: relative;
+
+        &-items {
+            &:hover {
+                cursor: pointer;
+
+                .title {
+                    @include visible(1);
+                }
+            }
+
+            position: relative;
+
+
+
+            .title {
+                @include transition($t);
+                @include visible(0);
+                @include mid;
+
+                &::before {
+                    content: '';
+                    width: 8px;
+                    height: 8px;
+                    background: $yellow-cl;
+                    display: block;
+                    transform: rotate(-45deg);
+                    position: absolute;
+                    bottom: 23%;
+                    left: 50%;
+                }
+
+                &::after {
+                    content: '';
+                    width: 100px;
+                    height: 1px;
+                    background: $yellow-cl;
+                    display: block;
+                    margin: 30px auto;
+                }
+            }
+        }
+
+
+
+    }
+
+    .btn {
+        margin: 40px auto 0 auto;
+
+        &::after {
+            width: 169px;
+        }
+    }
+
+}
+
+@include lg {
+    // CSS responsive large desktop
+}
+
+@include md {
+    // CSS responsive desktop
+}
+
+@include sm {
+
+    // CSS responsive tablet
+    .scourmenus {
+
+
+        &__list {
+
+            grid-template-columns: none;
+
+            &-items {
+                position: relative;
+
+
+            }
+        }
+    }
+}
+
+@include xs {
+
+    // CSS responsive mobile
+    .scourmenus {
+        &__list {
+            &-items {
+
+
+                .title {
+                    font-size: 25px;
+                }
+            }
+        }
+
+    }
+}
+
+
+@include xxs {
+
+    // CSS responsive small mobile
+
+}

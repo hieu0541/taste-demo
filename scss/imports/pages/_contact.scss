@@ -1,0 +1,66 @@
+.sccontact {
+    background: $bg-cl;
+    padding-top: 120px;
+    padding-bottom: 45px;
+
+    .container {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        gap: 60px;
+
+        .left {
+            &__list {
+                &-item {
+                    display: flex;
+
+                    img {
+                        margin-right: 40px;
+                    }
+                }
+            }
+        }
+
+        .icon {
+            margin-top: 25px;
+
+
+
+
+            img {
+                background: $yellow-cl;
+                margin-right: 15px;
+                border-radius: 50%;
+                border: 1px solid $yellow-cl;
+            }
+
+        }
+    }
+}
+
+.scmap {
+    background: $bg-cl;
+    padding: 0 30px;
+
+    .map {
+        filter: grayscale(1);
+        @include transition($t);
+
+        &:hover {
+            filter: grayscale(0);
+        }
+    }
+}
+
+
+@include sm {
+
+    // CSS responsive tablet
+    .sccontact {
+
+
+        .container {
+
+            grid-template-columns: none;
+        }
+    }
+}

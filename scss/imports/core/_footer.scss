@@ -1,0 +1,157 @@
+// css footer
+.footer {
+    background: $bg-cl2;
+
+
+    .top {
+        padding-top: $pad-section;
+        padding-bottom: 60px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+
+        .left {
+            .heading {
+                margin-bottom: 20px;
+            }
+
+            &__list {
+                padding-left: 10px;
+
+                &-item {
+                    margin-bottom: 20px;
+                    display: flex;
+
+                    img {
+                        margin-right: 30px;
+                    }
+                }
+            }
+
+
+        }
+
+        .mid {
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            img {
+                margin-bottom: 35px;
+            }
+
+            .--des {
+                text-align: center;
+                color: $white-cl;
+                margin-bottom: 25px;
+            }
+
+            .icon {
+                img {
+                    margin-right: 25px;
+                }
+            }
+        }
+
+        .right {
+            .heading {
+                margin-bottom: 20px;
+            }
+
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+
+            &__list {
+                display: flex;
+                flex-direction: column;
+                align-items: end;
+
+                &-item {
+                    display: flex;
+                    margin-bottom: 20px;
+
+                    .--date {
+                        color: $yellow-cl;
+                        margin-right: 7px;
+                    }
+                }
+            }
+
+        }
+    }
+
+    .bottom {
+        background: $bg-cl;
+
+        .desc {
+            padding: 25px 0;
+            text-align: center;
+        }
+    }
+}
+
+@include lg {
+    // CSS responsive large desktop
+}
+
+@include md {
+    .footer {
+        .top {
+
+
+            .mid {
+
+
+                .icon {
+                    img {
+                        margin-right: 20px;
+                    }
+                }
+            }
+        }
+    }
+
+    // CSS responsive desktop
+}
+
+@include sm {
+    .footer {
+        .top {
+            grid-template-columns: none;
+
+            .mid {
+                align-items: flex-start;
+
+                .icon {
+                    img {
+                        margin-right: 20px;
+                    }
+                }
+
+                .--des {
+                    text-align: left;
+                }
+            }
+
+            .right {
+                align-items: flex-start;
+
+                &__list {
+                    align-items: flex-start;
+                }
+            }
+        }
+    }
+
+    // CSS responsive tablet
+}
+
+@include xs {
+    // CSS responsive mobile
+}
+
+@include xxs {
+    // CSS responsive small mobile
+}

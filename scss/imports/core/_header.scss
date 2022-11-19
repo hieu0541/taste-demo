@@ -1,0 +1,185 @@
+// css header
+.header {
+    width: 100%;
+    height: $height-header;
+    background: $bg-cl;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    position: fixed;
+    z-index: 600;
+
+    .menu {
+        height: 100%;
+
+        .active {
+            color: $yellow-cl;
+        }
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include mid;
+
+        li {
+            padding: 0 15px;
+
+
+
+            a {
+                @include text(14px, 'OsRe', 20px, $white-cl, uppercase);
+                @include transition($t);
+
+                &:hover {
+                    color: $yellow-cl;
+                }
+            }
+        }
+    }
+
+    .right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+        .lang {
+            &.active {
+                .lang__option {
+                    @include visible(1);
+                }
+
+            }
+
+
+            position: relative;
+            margin-right: 40px;
+
+
+            &:hover {
+
+                cursor: pointer;
+
+                .lang__select {
+                    a {
+                        color: $yellow-cl;
+                    }
+                }
+
+
+
+
+            }
+
+            .lang__select {
+                color: $white-cl;
+
+                &:hover {
+                    color: $yellow-cl;
+                }
+
+                @include text(14px, 'OsRe', 20px, $white-cl, uppercase);
+                @include transition($t);
+
+                a {
+                    color: $white-cl;
+                }
+
+            }
+
+            .lang__option {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                padding-top: 15px;
+                @include visible(0);
+                z-index: 100;
+
+                a {
+                    @include text(14px, 'OsRe', 20px, $white-cl, uppercase);
+                    margin-bottom: 15px;
+                    @include transition($t);
+
+                    &:hover {
+                        color: $yellow-cl;
+                    }
+                }
+            }
+        }
+
+        .btn-header {
+            padding: 16px 53px;
+
+
+            &:hover {
+                background: $white-cl;
+                color: $btn-blue;
+
+            }
+        }
+    }
+
+
+}
+
+@include maxW(1303px) {
+    .header {
+        .menu {
+            display: none;
+        }
+
+        .right {
+            .btn-header {
+                display: none;
+            }
+
+            .btn__menu {
+                &:hover {
+                    cursor: pointer;
+                }
+
+                &.active {
+                    span {
+                        transition: 1.2s;
+                        opacity: 0;
+                        pointer-events: none;
+
+
+                    }
+
+                    &::after {
+                        transform: rotate(-45deg) translate(9px, -4px);
+                    }
+
+                    &::before {
+                        transform: rotate(45deg) translate(13px, 7px);
+                    }
+
+                }
+
+                display: block;
+
+
+                &::before,
+                &::after {
+                    content: '';
+                    width: 34px;
+                    height: 2px;
+                    display: block;
+                    background: $yellow-cl;
+                    transition: 1.2s;
+                }
+
+                span {
+                    width: 100%;
+                    height: 2px;
+                    display: block;
+                    background: $yellow-cl;
+                    margin: 10px auto;
+                }
+            }
+        }
+
+    }
+}
